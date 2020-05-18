@@ -13,7 +13,6 @@ class Flock {
         this.ticker = new PIXI.ticker.Ticker();
         this.ticker.stop()
 
-
         document.body.appendChild(this.app.view);
 
         this.resize()

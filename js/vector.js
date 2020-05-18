@@ -2,7 +2,7 @@ const calcMagnitude = (x, y) => {
     return Math.sqrt(x * x + y * y)
 }
 /**
- * Rought 2D Vector class... next time don't reinvent the wheel
+ * Rough 2D Vector class... next time don't reinvent the wheel
  */
 class Vector {
     constructor(x, y) {
