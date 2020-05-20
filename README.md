@@ -19,9 +19,8 @@ Implementation of Craig Reynold's flocking approach. Inspiried by The Coding Tra
 
 
 ### References
-![Craig Reynold]
-(https://www.red3d.com/cwr/boids/)
-![Coding Challenge Flocking Video]
-(https://thecodingtrain.com/CodingChallenges/124-flocking-boids.html)
-![Coding Challenge Youtube channel]
-(https://www.youtube.com/user/shiffman)
+[Craig Reynold](https://www.red3d.com/cwr/boids/)
+
+[Coding Challenge Flocking Video](https://thecodingtrain.com/CodingChallenges/124-flocking-boids.html)
+
+[Coding Challenge Youtube channel](https://www.youtube.com/user/shiffman)
