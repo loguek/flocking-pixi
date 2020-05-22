@@ -9,16 +9,17 @@ Implementation of Craig Reynold's flocking approach. Inspiried by The Coding Tra
 * Boids are can be given a limited view
 * View cones can be enabled/disabled
 * View adjusts to window size (including debounce implementation)
+* Cursor avoidance
 
 ### To be added
 
 * Optimise performance
 * Enable manipulation of rules
-* Add cursor avoidance
+* ~~Add cursor avoidance~~
 * Add screen edge avoidance
 
 
 ### References
-https://www.red3d.com/cwr/boids/
-https://thecodingtrain.com/CodingChallenges/124-flocking-boids.html
-https://www.youtube.com/user/shiffman
+[Craig Reynold](https://www.red3d.com/cwr/boids/)
+[Coding Challenge Flocking Video](https://thecodingtrain.com/CodingChallenges/124-flocking-boids.html)
+[Coding Challenge Youtube channel](https://www.youtube.com/user/shiffman)

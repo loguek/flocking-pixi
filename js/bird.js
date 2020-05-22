@@ -112,10 +112,20 @@ class Bird {
         this.acceleration.add(avgSeperation) // seperation
     }
 
-    update(birds) {
+    avoidMouse(mousePosition) {
+        const distance = Vector.distanceBetween(this.position, mousePosition)
+        if( distance < 100) {
+            const difference = Vector.subtract(this.position, mousePosition)
+            const speed = Math.random() * (BirdDefaults.maxSpeed - 2) + 2
+            difference.setMagnitude(speed)
+            this.acceleration.add(difference)
+        }
+    }
+
+    update(birds, mousePosition) {
         this.applyFlockingRulesLogic(birds)
+        this.avoidMouse(mousePosition)
         this.updatedPosition.add(this.velocity)
-        
         this.velocity.add(this.acceleration)
         this.velocity.limitMagnitude(BirdDefaults.maxSpeed)
         this.restrictPositionToWorld()

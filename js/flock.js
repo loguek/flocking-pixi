@@ -15,13 +15,21 @@ class Flock {
 
         document.body.appendChild(this.app.view);
 
+        this.mousePosition = new Vector(-100, -100)
         this.resize()
         this.createFlock()
         window.addEventListener('resize', () => { this.resize() })
+        window.addEventListener('mousemove', e => { this.updateMousePosition(e) })
+        window.addEventListener('mouseleave', e =>{ this. updateMousePosition({ x:-100, y:-100 })} )
         
         this.ticker.add(() => {
             this.update()
         })
+    }
+
+    updateMousePosition({ x, y }) {
+        this.mousePosition.x = x
+        this.mousePosition.y = y
     }
 
     resize() {
@@ -41,7 +49,7 @@ class Flock {
         this.birds.forEach( bird => {
             bird.birdsInView = 0
             const visibleBirds = this.birds.filter(otherBird => bird.canSee(otherBird))
-            bird.update(visibleBirds)
+            bird.update(visibleBirds, this.mousePosition)
         })
 
         this.birds.forEach( bird => {
