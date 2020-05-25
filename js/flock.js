@@ -10,7 +10,7 @@ class Flock {
 
         // Creating a seperate ticker so as to stop it while resizing the screen
         // ... doesn't seem to have any performance benefits over just using a flag though
-        this.ticker = new PIXI.ticker.Ticker();
+        this.ticker = new PIXI.Ticker();
         this.ticker.stop()
 
         document.body.appendChild(this.app.view);
