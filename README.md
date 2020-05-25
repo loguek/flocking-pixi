@@ -10,6 +10,7 @@ Implementation of Craig Reynold's flocking approach. Inspiried by The Coding Tra
 * View cones can be enabled/disabled
 * View adjusts to window size (including debounce implementation)
 * Cursor avoidance
+* Colour of boid is based on the angle of the boids velocity
 
 ### To be added
 
@@ -17,6 +18,7 @@ Implementation of Craig Reynold's flocking approach. Inspiried by The Coding Tra
 * Enable manipulation of rules
 * ~~Add cursor avoidance~~
 * Add screen edge avoidance
+
 
 
 ### References
