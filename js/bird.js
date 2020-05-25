@@ -1,3 +1,5 @@
+
+
 class Bird {
     constructor(position, velocity, graphicFn) {
         this.position = position
@@ -9,13 +11,26 @@ class Bird {
         this.color = BirdDefaults.color
         this.radius = BirdDefaults.size
         this.graphic = graphicFn()  // IoC for testing with Jest, don't want to include Pixi
-        this.birdsInView = 0  
+        this.birdsInView = 0
+        
     }
+
+    updateColor() {
+        //TODO: Come up with better way of achieving this
+        const radians = Math.atan2(this.velocity.y, this.velocity.x)
+        
+        const angleRatio = (radians >= 0 ? radians : (2 * Math.PI + radians))
+        this.color = BirdDefaults.palette[Math.round((angleRatio) * 180 / Math.PI)]
+    }
+
+    
 
     draw() {
         this.graphic.clear()
-
+        this.updateColor()
+        
         // Draw basic trianlge/bird/plane thing
+        // Probably would be better to use a sprite
         this.graphic.beginFill(this.color)
         this.graphic.moveTo(this.radius, 0)
         this.graphic.lineTo(-this.radius, -this.radius)
@@ -78,6 +93,7 @@ class Bird {
     }
 
 
+
     applyFlockingRulesLogic(birds) {
         if(birds.length === 0) return 
 
@@ -136,7 +152,7 @@ class Bird {
         if (bird === this) return false
 
         const velocityAngle = Math.atan2(this.velocity.y, this.velocity.x)
-        // Seem like a great idea to shift the birds eyes not to be in the centre :(
+        // Seemed like a great idea to shift the birds eyes not to be in the centre :(
         const eyeLocation = new Vector(
             this.position.x + (this.radius * Math.cos(velocityAngle)),
             this.position.y + (this.radius * Math.sin(velocityAngle))

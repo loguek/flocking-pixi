@@ -45,13 +45,27 @@ class Flock {
         }, 250)
     }
 
+
+    // Only used for testing
+    renderPalette() {
+        let x = 0, size = 2
+        const paletteGraphic = new PIXI.Graphics()
+        BirdDefaults.palette.forEach((color, index) => {
+            paletteGraphic.beginFill(color)
+            paletteGraphic.drawRect(size * index, 0, size, 100)
+            paletteGraphic.endFill()  
+        })
+        this.app.stage.addChild(paletteGraphic)
+    }
+
     update() {
         this.birds.forEach( bird => {
             bird.birdsInView = 0
             const visibleBirds = this.birds.filter(otherBird => bird.canSee(otherBird))
             bird.update(visibleBirds, this.mousePosition)
         })
-
+        //this.renderPalette()
+       
         this.birds.forEach( bird => {
             bird.draw()
         })
