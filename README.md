@@ -22,6 +22,8 @@ Implementation of Craig Reynold's flocking approach. Inspired by The Coding Trai
 * Add screen edge avoidance
 
 
+### Live Demo
+[coderadical-flocking](https://coderadical.com/flocking/)
 
 ### References
 [Craig Reynold](https://www.red3d.com/cwr/boids/)
