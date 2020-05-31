@@ -1,6 +1,4 @@
-const calcMagnitude = (x:number, y:number): number => {
-    return Math.sqrt(x * x + y * y)
-}
+const calcMagnitude = (x: number, y: number): number => Math.sqrt(x * x + y * y);
 /**
  * Rough 2D Vector class... next time don't reinvent the wheel
  */
@@ -26,7 +24,7 @@ export default class Vector {
     }
 
     divideBy(value: number): Vector {
-        if(value > 0) {
+        if (value > 0) {
             this.x /= value;
             this.y /= value;
         }
@@ -48,41 +46,40 @@ export default class Vector {
 
     limitMagnitude(value: number): Vector {
         const mag: number = calcMagnitude(this.x, this.y);
-        if(mag > value) {;
+        if (mag > value) {
             this.setMagnitude(value);
         }
-        return this
+        return this;
     }
 
     getMagnitude(): number {
-        return calcMagnitude(this.x, this.y)
+        return calcMagnitude(this.x, this.y);
     }
 
     normalize(): Vector {
-        const mag: number = calcMagnitude(this.x, this.y)
+        const mag: number = calcMagnitude(this.x, this.y);
         if (mag === 0) {
-            this.x = 1
-            this.y = 0
+            this.x = 1;
+            this.y = 0;
         } else {
-            this.x /= mag
-            this.y /= mag
+            this.x /= mag;
+            this.y /= mag;
         }
-        
-        return this
+
+        return this;
     }
 
     static distanceBetween(v1: Vector, v2: Vector): number {
-        const dx = v1.x - v2.x
-        const dy = v1.y - v2.y
+        const dx = v1.x - v2.x;
+        const dy = v1.y - v2.y;
         return calcMagnitude(dx, dy);
     }
 
     static subtract(v1: Vector, v2: Vector): Vector {
-        return new Vector(v1.x - v2.x, v1.y - v2.y)
+        return new Vector(v1.x - v2.x, v1.y - v2.y);
     }
 
     static add(v1: Vector, v2: Vector): Vector {
-        return new Vector(v1.x + v2.x, v1.y + v2.y)
+        return new Vector(v1.x + v2.x, v1.y + v2.y);
     }
 }
-

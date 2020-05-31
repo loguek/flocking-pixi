@@ -1,3 +1,3 @@
-import { FlockingApp } from "./flockingApp";
+import { FlockingApp } from './flockingApp';
 
-const app = new FlockingApp();
+new FlockingApp();
