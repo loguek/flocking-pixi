@@ -63,3 +63,5 @@ const BirdDefaults = {
         show: false
     }
 }
+
+export { World, BirdDefaults }

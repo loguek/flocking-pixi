@@ -1,6 +1,18 @@
+import * as PIXI from 'pixi.js';
+import Vector from './vector';
 
+import { World, BirdDefaults } from './settings';
 
-class Bird {
+export default class Bird {
+    public position: Vector;
+    public velocity: Vector;
+    public acceleration: Vector;
+    public graphic:PIXI.Graphics;
+
+    private color: number;
+    private radius: number;
+    private updatedPosition: Vector;
+
     constructor(position, velocity, graphicFn) {
         this.position = position
         // This is a bit naff but we only want to update the boids position
@@ -10,9 +22,7 @@ class Bird {
         this.acceleration = new Vector()
         this.color = BirdDefaults.color
         this.radius = BirdDefaults.size
-        this.graphic = graphicFn()  // IoC for testing with Jest, don't want to include Pixi
-        this.birdsInView = 0
-        
+        this.graphic = graphicFn()
     }
 
     updateColor() {
@@ -22,8 +32,6 @@ class Bird {
         const angleRatio = (radians >= 0 ? radians : (2 * Math.PI + radians))
         this.color = BirdDefaults.palette[Math.round((angleRatio) * 180 / Math.PI)]
     }
-
-    
 
     draw() {
         this.graphic.clear()
@@ -159,7 +167,7 @@ class Bird {
         )
         
         const distance = Vector.distanceBetween(bird.position, eyeLocation)
-        if(distance < BirdDefaults.radius) {
+        if(distance < BirdDefaults.size) {
             // Likely already collided...
             return true
         } else if(distance < BirdDefaults.vision.distance) {
@@ -168,7 +176,6 @@ class Bird {
             const viewAngle = Math.abs(Math.atan2(difference.y, difference.x) - velocityAngle) * 180 / Math.PI
 
             if(viewAngle <= BirdDefaults.vision.angle / 2){
-                this.birdsInView += 1
                 return true
             }
         }

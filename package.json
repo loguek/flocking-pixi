@@ -1,0 +1,23 @@
+{
+  "name": "proto.radical",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "jest",
+    "start": "parcel ./src/index.html",
+    "build": "parcel build ./src/index.html"
+  },
+  "author": "Kevin Logue",
+  "license": "ISC",
+  "dependencies": {
+    "pixi.js": "^5.2.4"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.2.3",
+    "jest": "^26.0.1",
+    "parcel-bundler": "^1.12.4",
+    "ts-jest": "^26.0.0",
+    "typescript": "^3.9.3"
+  }
+}
