@@ -7,9 +7,9 @@ Implementation of Craig Reynold's flocking approach. Inspired by The Coding Trai
 ![Screen Grab](/resources/screengrab.gif)
 
 * Boids are can be given a limited view
-  * View can be restricted by FOV and distance
+  * View can be restricted by FOV and distance (via code!)
   * View cone starts from the front of boid as opposed to the centre of it
-  * View cones can be enabled/disabled
+  * View cones can be enabled/disabled (via code!)
 * View adjusts to window size (including debounce implementation)
 * Cursor avoidance
 * Colour of boid is based on the angle of the boids velocity
@@ -20,6 +20,13 @@ Implementation of Craig Reynold's flocking approach. Inspired by The Coding Trai
 * Enable manipulation of rules
 * ~~Add cursor avoidance~~
 * Add screen edge avoidance
+
+
+### To run
+```
+npm i && npm start
+
+```
 
 
 ### Live Demo
