@@ -42,6 +42,7 @@ export class FlockingApp {
         this.resize();
         this.createFlock();
 
+        this.setupCheckbox();
         this.setupRange('alignment');
         this.setupRange('cohesion');
         this.setupRange('seperation');
@@ -68,6 +69,15 @@ export class FlockingApp {
         if (domElement) {
             domElement.addEventListener('change', () => {
                 World.multipliers[id] = Number(domElement.value) / 100;
+            });
+        }
+    }
+
+    private setupCheckbox(): void {
+        const domElement = <HTMLInputElement>document.getElementById('coneCheckBox');
+        if (domElement) {
+            domElement.addEventListener('change', () => {
+                BirdDefaults.vision.show = !BirdDefaults.vision.show;
             });
         }
     }
