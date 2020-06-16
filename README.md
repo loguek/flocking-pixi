@@ -13,11 +13,12 @@ Implementation of Craig Reynold's flocking approach. Inspired by The Coding Trai
 * View adjusts to window size (including debounce implementation)
 * Cursor avoidance
 * Colour of boid is based on the angle of the boids velocity
+* Ability to set the percentage of each force applied
 
-### To be added
+### Todo
 
 * Optimise performance
-* Enable manipulation of rules
+* ~~Enable manipulation of rules~~
 * ~~Add cursor avoidance~~
 * Add screen edge avoidance
 
