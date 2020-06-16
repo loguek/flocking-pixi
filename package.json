@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "start": "parcel ./src/index.html",
-    "build": "parcel build ./src/index.html"
+    "prebuild": "rm -rf dist",
+    "build": "parcel build ./src/index.html --public-url ./"
   },
   "author": "Kevin Logue",
   "license": "ISC",
