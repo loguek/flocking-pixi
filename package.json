@@ -7,7 +7,7 @@
     "test": "jest",
     "start": "parcel ./src/index.html",
     "prebuild": "rm -rf dist",
-    "build": "parcel build ./src/index.html --public-url ./"
+    "build": "parcel build ./src/index.html --public-url ./ --no-source-maps"
   },
   "author": "Kevin Logue",
   "license": "ISC",
