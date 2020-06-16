@@ -7,6 +7,30 @@
     <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
-    <script src="main.ts"></script>
+    <div id="display">
+        <div class="controlPanel">
+            <div class="contents">
+                <div>
+                    <h1>CONTROLS</h1>
+                </div>
+                <div class="slider">
+                    <input type="range" id="alignment" name="alignment" min="0" max="200" oninput="alignmentOutput.value = `${alignment.value}%`">
+                    <label for="alignment">Alignment</label>
+                    <output name="alignmentOutput" id="alignmentOutput">100%</output>
+                </div>
+                <div class="slider">
+                    <input type="range" id="cohesion" name="cohesion" min="0" max="200" oninput="cohesionOutput.value = `${cohesion.value}%`">
+                    <label for="cohesion">Cohesion</label>
+                    <output name="cohesionOutput" id="cohesionOutput">100%</output>
+                </div>
+                <div class="slider">
+                    <input type="range" id="seperation" name="seperation" min="0" max="200" oninput="seperationOutput.value = `${seperation.value}%`">
+                    <label for="seperation">Seperation</label>
+                    <output name="seperationOutput" id="seperationOutput">100%</output>
+                </div>
+            </div>
+        </div>
+        <script src="main.ts"></script>
+    </div>
 </body>
 </html>

@@ -69,6 +69,10 @@ export default class Vector {
         return this;
     }
 
+    clone(): Vector {
+        return new Vector(this.x, this.y);
+    }
+
     static distanceBetween(v1: Vector, v2: Vector): number {
         const dx = v1.x - v2.x;
         const dy = v1.y - v2.y;

@@ -1,4 +1,50 @@
-body {
-    margin:0;
-    padding:0;
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.controlPanel{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    opacity: 0.2;
+    transition:opacity 0.8s
+}
+
+.controlPanel:hover{
+    opacity: 1;
+    transition:opacity 0.5s
+}
+
+.controlPanel .contents{
+    margin: 20px;
+    padding: 10px;
+    font-size: 0.8em;
+    font-weight: bold;
+    background-color:rgba(0, 0, 0, 0.25);
+}
+
+.contents h1 {
+    font-size: 1.2em;
+    padding: 0px;
+    margin: 0px 0px 10px 0px;
+    text-align: center;
+}
+
+.slider{
+    display: flex;
+}
+
+.slider label{
+    padding: 0 5px;
+}
+
+.slider output {
+    flex: 1;
+    text-align: right;
+    min-width: 35px;
 }

@@ -23,7 +23,8 @@ export class FlockingApp {
             this.update();
         });
 
-        document.body.appendChild(this.app.view);
+        const displayDiv = document.querySelector('#display');
+        displayDiv.appendChild(this.app.view);
 
         window.addEventListener('resize', () => {
             this.resize();
@@ -40,6 +41,10 @@ export class FlockingApp {
 
         this.resize();
         this.createFlock();
+
+        this.setupRange('alignment');
+        this.setupRange('cohesion');
+        this.setupRange('seperation');
     }
 
     private update(): void {
@@ -56,6 +61,15 @@ export class FlockingApp {
     private updateMousePosition({ x, y }): void {
         this.mousePosition.x = x;
         this.mousePosition.y = y;
+    }
+
+    private setupRange(id: string): void {
+        const domElement = <HTMLInputElement>document.getElementById(id);
+        if (domElement) {
+            domElement.addEventListener('change', () => {
+                World.multipliers[id] = Number(domElement.value) / 100;
+            });
+        }
     }
 
     resize(): void {

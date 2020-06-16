@@ -125,6 +125,10 @@ export default class Bird {
         this.applyForceLimits(avgVelocity);
         this.applyForceLimits(avgSeperation);
 
+        avgVelocity.multiplyBy(World.multipliers.alignment);
+        avgPosition.multiplyBy(World.multipliers.cohesion);
+        avgSeperation.multiplyBy(World.multipliers.seperation);
+
         this.acceleration.add(avgVelocity); // alignment
         this.acceleration.add(avgPosition); // cohesion
         this.acceleration.add(avgSeperation); // seperation
